@@ -12,7 +12,7 @@ export function Projects() {
       description:
         "Professional tutoring website providing personalized learning experiences for students of all levels. Features easy navigation, subject browsing, session booking, and tailored resources.",
       image: "/images/greatmindz-screenshot.png",
-      liveUrl: "https://greatmindztutors.co.za",
+      liveUrl: "https://www.greatmindztutors.co.za",
       githubUrl: "https://github.com/kgothalangLekitlane/GreatMindz-Tutoring-main",
       technologies: ["React", "HTML5", "CSS3", "Responsive Design"],
       featured: true,
