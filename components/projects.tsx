@@ -10,11 +10,11 @@ export function Projects() {
     {
       title: "GreatMindz Tutoring Platform",
       description:
-        "Professional tutoring website providing personalized learning experiences for students of all levels. Features easy navigation, subject browsing, session booking, and tailored resources.",
+        "Professional tutoring website built with Django providing personalized learning experiences for students of all levels. Features easy navigation, subject browsing, session booking, and tailored resources with a robust backend system.",
       image: "/images/greatmindz-screenshot.png",
       liveUrl: "https://www.greatmindztutors.co.za",
       githubUrl: "https://github.com/kgothalangLekitlane/GreatMindz-Tutoring-main",
-      technologies: ["React", "HTML5", "CSS3", "Responsive Design"],
+      technologies: ["Django", "Python", "HTML5", "CSS3", "Responsive Design"],
       featured: true,
     },
     {
