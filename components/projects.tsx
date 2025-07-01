@@ -1,101 +1,116 @@
+import Image from "next/image"
+import Link from "next/link"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { ExternalLink, Github } from "lucide-react"
-import Link from "next/link"
-import Image from "next/image"
 
 export function Projects() {
   const projects = [
     {
       title: "GreatMindz Tutoring Platform",
       description:
-        "A comprehensive tutoring website that provides personalized learning experiences for students of all levels. Features an easy-to-navigate interface where students can browse available subjects, book sessions, and access resources tailored to their learning needs. The site includes a professional design with mobile responsiveness and engaging user experience.",
+        "Professional tutoring website providing personalized learning experiences for students of all levels. Features easy navigation, subject browsing, session booking, and tailored resources.",
       image: "/images/greatmindz-screenshot.png",
-      technologies: ["React", "HTML5", "CSS3", "Responsive Web Design"],
       liveUrl: "https://greatmindztutors.co.za",
       githubUrl: "https://github.com/kgothalangLekitlane/GreatMindz-Tutoring-main",
+      technologies: ["React", "HTML5", "CSS3", "Responsive Design"],
+      featured: true,
     },
     {
       title: "Global Wanderer Travel Blog",
       description:
-        "A beautifully designed travel blog featuring the tagline 'Embark on Your Next Adventure'. The site offers breathtaking destinations, travel tips, and inspiring stories from around the world. Features clean typography, intuitive navigation, and engaging call-to-action buttons for exploring destinations and learning about the blog.",
+        "Beautiful travel blog with engaging design and compelling content. Features clean layout, stunning visuals, and intuitive navigation for travel enthusiasts.",
       image: "/images/travel-blog-screenshot.png",
-      technologies: ["HTML5", "CSS3", "Responsive Web Design", "JavaScript"],
       liveUrl: "https://startling-kataifi-4a7053.netlify.app",
       githubUrl: "https://github.com/kgothalangLekitlane/studio",
+      technologies: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
+      featured: true,
     },
     {
       title: "Python File Handling & Exception Management",
       description:
-        "A Python project focused on learning file handling operations and exception management fundamentals. Demonstrates proper error handling techniques, file I/O operations, and best practices for managing exceptions in Python applications. Part of my journey learning Python programming fundamentals.",
-      image: "/placeholder.svg?height=200&width=400",
-      technologies: ["Python", "File I/O", "Exception Handling"],
-      liveUrl: "#",
+        "Focused project demonstrating file handling operations and exception management fundamentals. Shows error handling techniques and Python best practices.",
       githubUrl: "https://github.com/kgothalangLekitlane/filehandlingexception",
+      technologies: ["Python", "File I/O", "Exception Handling"],
+      featured: false,
     },
     {
       title: "Python Programming Assignments",
       description:
-        "A collection of Python programming assignments demonstrating core programming concepts and problem-solving skills. Includes various exercises covering Python syntax, data structures, algorithms, and programming logic. These assignments showcase my learning progression and understanding of Python fundamentals.",
-      image: "/placeholder.svg?height=200&width=400",
-      technologies: ["Python", "Data Structures", "Algorithms"],
-      liveUrl: "#",
+        "Collection of Python exercises and assignments covering core programming concepts, data structures, and algorithms. Demonstrates problem-solving skills and Python syntax mastery.",
       githubUrl: "https://github.com/kgothalangLekitlane/assignment",
+      technologies: ["Python", "Algorithms", "Data Structures"],
+      featured: false,
     },
   ]
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/50">
+    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">Featured Projects</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Featured Projects</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            A showcase of my work, from client projects to learning exercises
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <Card key={index} className="overflow-hidden">
-              <div className="aspect-video relative">
-                <Image src={project.image || "/placeholder.svg"} alt={project.title} fill className="object-cover" />
-              </div>
+            <Card
+              key={index}
+              className="border-orange-500/20 hover:border-orange-500/40 transition-all duration-300 overflow-hidden"
+            >
+              {project.image && (
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src={project.image || "/placeholder.svg"}
+                    alt={project.title}
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              )}
               <CardHeader>
-                <CardTitle className="text-xl">{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
+                <CardTitle className="text-xl mb-2">{project.title}</CardTitle>
+                <p className="text-muted-foreground text-sm leading-relaxed">{project.description}</p>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech, techIndex) => (
-                    <Badge key={techIndex} variant="outline">
+                    <Badge
+                      key={techIndex}
+                      variant="secondary"
+                      className="bg-orange-500/10 text-orange-500 hover:bg-orange-500/20 border-orange-500/20"
+                    >
                       {tech}
                     </Badge>
                   ))}
                 </div>
-                {project.liveUrl !== "#" && (
+
+                {project.liveUrl && (
                   <div className="mb-3">
-                    <p className="text-sm text-muted-foreground mb-1">Live Site:</p>
-                    <Link
-                      href={project.liveUrl}
-                      target="_blank"
-                      className="text-sm text-blue-600 hover:text-blue-800 break-all"
-                    >
-                      {project.liveUrl}
-                    </Link>
+                    <p className="text-xs text-muted-foreground mb-1">Live Site:</p>
+                    <p className="text-sm text-orange-500 break-all">{project.liveUrl}</p>
                   </div>
                 )}
-                <div className="flex gap-2">
-                  {project.liveUrl !== "#" ? (
-                    <Button size="sm" asChild>
-                      <Link href={project.liveUrl} target="_blank">
-                        <ExternalLink className="mr-2 h-4 w-4" />
+
+                <div className="flex gap-3">
+                  {project.liveUrl ? (
+                    <Button asChild size="sm" className="bg-orange-500 hover:bg-orange-600">
+                      <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-4 w-4 mr-2" />
                         Visit Site
                       </Link>
                     </Button>
                   ) : (
-                    <Button size="sm" disabled>
-                      <ExternalLink className="mr-2 h-4 w-4" />
+                    <Button disabled size="sm" variant="secondary">
                       Code Project
                     </Button>
                   )}
-                  <Button variant="outline" size="sm" asChild>
-                    <Link href={project.githubUrl} target="_blank">
-                      <Github className="mr-2 h-4 w-4" />
+                  <Button asChild variant="outline" size="sm">
+                    <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                      <Github className="h-4 w-4 mr-2" />
                       Code
                     </Link>
                   </Button>

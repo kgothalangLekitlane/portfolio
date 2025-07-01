@@ -1,68 +1,77 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Award, Calendar } from "lucide-react"
+import { GraduationCap, Award, BookOpen } from "lucide-react"
 
 export function Education() {
-  const education = [
+  const educationItems = [
     {
       title: "Power Learn Project Africa",
-      type: "Software Development Bootcamp",
-      period: "2024 - Present",
+      subtitle: "Full-Stack Development Bootcamp",
+      period: "Feb 2025 - Present",
       status: "Currently Enrolled",
       description:
-        "Comprehensive software development program focusing on modern web technologies, problem-solving, and practical project development.",
-      skills: ["Full Stack Development", "Problem Solving", "Project Management", "Team Collaboration"],
+        "Intensive bootcamp focusing on full-stack development, collaborative learning, and real-world project building.",
+      icon: BookOpen,
+      color: "bg-green-500/10 text-green-500 border-green-500/20",
     },
     {
       title: "freeCodeCamp",
-      type: "Frontend Development Certification",
-      period: "2023",
-      status: "Completed",
+      subtitle: "Frontend Development Certification",
+      period: "Completed April 2024",
+      status: "Certified",
       description:
-        "Completed comprehensive frontend development curriculum covering HTML, CSS, JavaScript, React, and responsive web design principles.",
-      skills: ["HTML5", "CSS3", "JavaScript", "React", "Responsive Design"],
+        "Comprehensive 300+ hour curriculum covering HTML, CSS, JavaScript, React, and responsive web design principles.",
+      icon: Award,
+      color: "bg-blue-500/10 text-blue-500 border-blue-500/20",
+    },
+    {
+      title: "Self-Taught Learning",
+      subtitle: "Web Development Fundamentals",
+      period: "2022 - 2023",
+      status: "Foundation",
+      description:
+        "Independent study of web technologies, programming concepts, and development best practices through online resources and practice projects.",
+      icon: GraduationCap,
+      color: "bg-purple-500/10 text-purple-500 border-purple-500/20",
     },
   ]
 
   return (
-    <section id="education" className="py-20 px-4 sm:px-6 lg:px-8">
+    <section id="education" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
       <div className="container mx-auto max-w-4xl">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">Education & Certifications</h2>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Education & Learning</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            My continuous learning journey through bootcamps, certifications, and self-directed study
+          </p>
+        </div>
+
         <div className="space-y-8">
-          {education.map((edu, index) => (
-            <Card key={index}>
-              <CardHeader>
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                  <div>
-                    <CardTitle className="text-xl flex items-center gap-2">
-                      <Award className="h-5 w-5 text-orange-500" />
-                      {edu.title}
-                    </CardTitle>
-                    <CardDescription className="text-lg font-medium text-foreground">{edu.type}</CardDescription>
-                  </div>
-                  <div className="flex flex-col items-start sm:items-end mt-2 sm:mt-0">
-                    <div className="text-sm text-muted-foreground flex items-center gap-1">
-                      <Calendar className="h-4 w-4" />
-                      {edu.period}
+          {educationItems.map((item, index) => {
+            const IconComponent = item.icon
+            return (
+              <Card key={index} className="border-orange-500/20 hover:border-orange-500/40 transition-all duration-300">
+                <CardHeader>
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <IconComponent className="h-6 w-6 text-orange-500" />
                     </div>
-                    <Badge variant={edu.status === "Completed" ? "default" : "secondary"} className="mt-1">
-                      {edu.status}
-                    </Badge>
+                    <div className="flex-1">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+                        <CardTitle className="text-xl">{item.title}</CardTitle>
+                        <Badge className={item.color}>{item.status}</Badge>
+                      </div>
+                      <p className="text-lg text-muted-foreground mb-1">{item.subtitle}</p>
+                      <p className="text-sm text-muted-foreground">{item.period}</p>
+                    </div>
                   </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">{edu.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {edu.skills.map((skill, skillIndex) => (
-                    <Badge key={skillIndex} variant="outline">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground leading-relaxed">{item.description}</p>
+                </CardContent>
+              </Card>
+            )
+          })}
         </div>
       </div>
     </section>

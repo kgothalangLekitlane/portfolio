@@ -3,7 +3,7 @@ import { Github, Linkedin, Mail } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="bg-background border-t py-12 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-muted/30 border-t py-12 px-4 sm:px-6 lg:px-8">
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
@@ -11,20 +11,23 @@ export function Footer() {
             <p className="text-muted-foreground">Frontend Developer</p>
           </div>
           <div className="flex space-x-6">
-            <Link href="https://github.com" className="text-muted-foreground hover:text-foreground transition-colors">
+            <Link
+              href="https://github.com/kgothalangLekitlane"
+              className="text-muted-foreground hover:text-orange-500 transition-colors"
+            >
               <Github className="h-6 w-6" />
               <span className="sr-only">GitHub</span>
             </Link>
             <Link
               href="https://www.linkedin.com/in/isaac-lekitlane"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-muted-foreground hover:text-orange-500 transition-colors"
             >
               <Linkedin className="h-6 w-6" />
               <span className="sr-only">LinkedIn</span>
             </Link>
             <Link
               href="mailto:lekitlaneisaac0@gmail.com"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-muted-foreground hover:text-orange-500 transition-colors"
             >
               <Mail className="h-6 w-6" />
               <span className="sr-only">Email</span>

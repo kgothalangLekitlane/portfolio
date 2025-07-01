@@ -1,4 +1,6 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Briefcase, Users, Award, BookOpen } from "lucide-react"
 
 export function Experience() {
   const experiences = [
@@ -6,82 +8,113 @@ export function Experience() {
       title: "Frontend Developer",
       company: "Freelance & Client Projects",
       period: "2023 - Present",
+      type: "Professional Work",
+      icon: Briefcase,
       description:
-        "Building responsive web applications and websites for clients using React and modern web technologies. Working collaboratively with other developers on paid client projects, demonstrating strong teamwork and project delivery skills.",
+        "Building professional websites and web applications for clients, collaborating with other developers in team settings. Delivering paid projects with focus on user experience and modern web technologies.",
       achievements: [
-        "Delivered multiple paid client projects successfully",
-        "Collaborated with development teams in group settings",
-        "Built responsive, professional websites using React and modern web technologies",
-        "Maintained client relationships and project timelines",
+        "Delivered multiple client projects including tutoring platforms and content websites",
+        "Collaborated effectively with other developers in team environments",
+        "Managed client relationships and project timelines professionally",
+        "Built responsive, user-friendly interfaces using React and modern CSS",
       ],
     },
     {
-      title: "Software Development Student",
+      title: "Bootcamp Student",
       company: "Power Learn Project Africa",
-      period: "February 2025 - Present",
+      period: "Feb 2025 - Present",
+      type: "Current Learning",
+      icon: BookOpen,
       description:
-        "Currently enrolled in a comprehensive software development bootcamp focusing on full-stack development, problem-solving, and modern programming practices. Actively learning advanced development concepts and working on practical projects.",
+        "Intensive full-stack development bootcamp focusing on collaborative learning, problem-solving, and building real-world applications with modern technologies.",
       achievements: [
-        "Participating in intensive software development curriculum",
-        "Learning full-stack development practices",
-        "Working on collaborative coding projects",
-        "Developing problem-solving and analytical skills",
+        "Learning full-stack development with emphasis on practical application",
+        "Participating in collaborative coding projects and peer programming",
+        "Developing problem-solving skills through structured challenges",
+        "Building portfolio projects with guidance from industry professionals",
       ],
     },
     {
       title: "Frontend Development Certification",
       company: "freeCodeCamp",
       period: "Completed April 2024",
+      type: "Certification",
+      icon: Award,
       description:
-        "Successfully completed the comprehensive Frontend Development certification program, mastering HTML, CSS, JavaScript, React, and responsive web design principles through hands-on projects and challenges.",
+        "Completed comprehensive 300+ hour curriculum covering HTML, CSS, JavaScript, React, and responsive web design principles with hands-on projects.",
       achievements: [
-        "Completed 300+ hours of coursework and projects",
-        "Built 5+ certification projects demonstrating frontend skills",
-        "Mastered responsive web design and modern JavaScript",
-        "Gained solid foundation in React development",
+        "Mastered responsive web design principles and mobile-first development",
+        "Built multiple projects demonstrating JavaScript and React proficiency",
+        "Learned modern CSS techniques including Flexbox and Grid",
+        "Completed algorithm and data structure challenges",
       ],
     },
     {
       title: "Self-Taught Developer",
       company: "Independent Learning",
       period: "2022 - 2023",
+      type: "Foundation",
+      icon: Users,
       description:
-        "Began my coding journey through self-directed learning using online resources, tutorials, and personal projects. Built foundational skills in web development while developing discipline and problem-solving abilities.",
+        "Self-directed learning journey building foundational programming skills through online resources, tutorials, and personal projects.",
       achievements: [
-        "Learned HTML, CSS, JavaScript, and Python fundamentals",
+        "Developed strong foundation in HTML, CSS, and JavaScript",
         "Built personal projects to practice and demonstrate skills",
-        "Developed strong self-learning and research abilities",
-        "Established foundation for formal bootcamp education",
+        "Learned version control with Git and collaborative development practices",
+        "Established disciplined learning routine and problem-solving approach",
       ],
     },
   ]
 
   return (
-    <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8">
+    <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
       <div className="container mx-auto max-w-4xl">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">Work Experience</h2>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Experience & Journey</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            My professional development journey from self-taught beginnings to client work
+          </p>
+        </div>
+
         <div className="space-y-8">
-          {experiences.map((exp, index) => (
-            <Card key={index}>
-              <CardHeader>
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-                  <div>
-                    <CardTitle className="text-xl">{exp.title}</CardTitle>
-                    <CardDescription className="text-lg font-medium text-foreground">{exp.company}</CardDescription>
+          {experiences.map((experience, index) => {
+            const IconComponent = experience.icon
+            return (
+              <Card key={index} className="border-orange-500/20 hover:border-orange-500/40 transition-all duration-300">
+                <CardHeader>
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <IconComponent className="h-6 w-6 text-orange-500" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
+                        <CardTitle className="text-xl">{experience.title}</CardTitle>
+                        <Badge variant="secondary" className="bg-orange-500/10 text-orange-500 border-orange-500/20">
+                          {experience.type}
+                        </Badge>
+                      </div>
+                      <p className="text-lg text-muted-foreground mb-1">{experience.company}</p>
+                      <p className="text-sm text-muted-foreground">{experience.period}</p>
+                    </div>
                   </div>
-                  <div className="text-sm text-muted-foreground mt-2 sm:mt-0">{exp.period}</div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">{exp.description}</p>
-                <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-                  {exp.achievements.map((achievement, achIndex) => (
-                    <li key={achIndex}>{achievement}</li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          ))}
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">{experience.description}</p>
+                  <div className="space-y-2">
+                    <h4 className="font-semibold text-sm">Key Achievements:</h4>
+                    <ul className="space-y-1">
+                      {experience.achievements.map((achievement, achievementIndex) => (
+                        <li key={achievementIndex} className="text-sm text-muted-foreground flex items-start gap-2">
+                          <span className="w-1.5 h-1.5 bg-orange-500 rounded-full mt-2 flex-shrink-0"></span>
+                          {achievement}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </CardContent>
+              </Card>
+            )
+          })}
         </div>
       </div>
     </section>
