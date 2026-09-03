@@ -9,7 +9,7 @@ export function About() {
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">About Me</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Get to know more about my journey, skills, and passion for frontend development
+            Building practical software with a strong focus on frontend engineering, full-stack development, and secure technology.
           </p>
         </div>
 
@@ -22,8 +22,8 @@ export function About() {
                 </div>
                 <div>
                   <h3 className="font-semibold mb-2">Location</h3>
-                  <p className="text-muted-foreground">Virginia, South Africa</p>
-                  <p className="text-sm text-muted-foreground">Open to relocating to Johannesburg/Pretoria</p>
+                  <p className="text-muted-foreground">South Africa</p>
+                  <p className="text-sm text-muted-foreground">Open to software development opportunities and relocation</p>
                 </div>
               </div>
 
@@ -32,9 +32,9 @@ export function About() {
                   <Calendar className="h-6 w-6 text-orange-500" />
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2">Experience</h3>
-                  <p className="text-muted-foreground">2.5 years of frontend development</p>
-                  <p className="text-sm text-muted-foreground">Building client projects since 2023</p>
+                  <h3 className="font-semibold mb-2">Development Journey</h3>
+                  <p className="text-muted-foreground">Real-world software projects since 2023</p>
+                  <p className="text-sm text-muted-foreground">Frontend, backend, deployment, and security-focused development</p>
                 </div>
               </div>
 
@@ -43,9 +43,9 @@ export function About() {
                   <GraduationCap className="h-6 w-6 text-orange-500" />
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-2">Education</h3>
-                  <p className="text-muted-foreground">Bootcamps & Certifications</p>
-                  <p className="text-sm text-muted-foreground">Self-taught with formal training</p>
+                  <h3 className="font-semibold mb-2">Education & Training</h3>
+                  <p className="text-muted-foreground">Software engineering & cybersecurity training</p>
+                  <p className="text-sm text-muted-foreground">Continuous learning through projects, certifications, and formal study</p>
                 </div>
               </div>
             </div>
@@ -53,10 +53,12 @@ export function About() {
             <Card className="mt-8 border-orange-500/20">
               <CardContent className="p-6">
                 <p className="text-muted-foreground leading-relaxed">
-                  I'm a passionate frontend developer who started as a self-taught programmer and evolved through
-                  structured bootcamp training. My journey began with curiosity about web technologies and grew into a
-                  professional career building real-world applications for clients. I specialize in React development
-                  and am currently expanding my skills with Django to become a more well-rounded developer.
+                  I'm a software developer who combines a self-driven approach to learning with practical software
+                  engineering experience. I enjoy turning ideas into usable applications, from responsive React
+                  interfaces to Python and Node.js backends. My work increasingly focuses on building maintainable,
+                  production-minded systems while developing a deeper understanding of cybersecurity and secure software
+                  practices. I'm looking for opportunities where I can contribute, learn from experienced engineers,
+                  and grow into a well-rounded software professional.
                 </p>
               </CardContent>
             </Card>
