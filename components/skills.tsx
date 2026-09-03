@@ -27,26 +27,30 @@ export function Skills() {
   ]
 
   return (
-    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
+    <section id="skills" className="scroll-mt-20 bg-background px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Skills & Technologies</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+        <div className="mx-auto mb-10 max-w-2xl text-center sm:mb-14">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-orange-500">Technical toolkit</p>
+          <h2 className="mb-4 text-3xl font-bold sm:text-4xl">Skills & Technologies</h2>
+          <p className="text-base leading-7 text-muted-foreground sm:text-lg">
             A practical toolkit spanning frontend development, backend engineering, databases, deployment, and cybersecurity.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid gap-5 sm:grid-cols-2 lg:gap-6">
           {skillCategories.map((category) => {
             const IconComponent = category.icon
             return (
-              <Card key={category.title} className="border-orange-500/20 hover:border-orange-500/40 transition-colors h-full">
-                <CardHeader>
+              <Card
+                key={category.title}
+                className="h-full border-orange-500/20 transition-all duration-200 hover:-translate-y-0.5 hover:border-orange-500/40 hover:shadow-sm"
+              >
+                <CardHeader className="pb-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-orange-500/10 rounded-lg flex items-center justify-center shrink-0">
-                      <IconComponent className="h-5 w-5 text-orange-500" />
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-orange-500/10">
+                      <IconComponent className="h-5 w-5 text-orange-500" aria-hidden="true" />
                     </div>
-                    <CardTitle className="text-lg">{category.title}</CardTitle>
+                    <CardTitle className="text-base sm:text-lg">{category.title}</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -55,7 +59,7 @@ export function Skills() {
                       <Badge
                         key={skill}
                         variant="secondary"
-                        className="bg-orange-500/10 text-orange-500 hover:bg-orange-500/20 border-orange-500/20"
+                        className="border-orange-500/20 bg-orange-500/10 text-orange-500 hover:bg-orange-500/20"
                       >
                         {skill}
                       </Badge>
