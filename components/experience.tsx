@@ -11,57 +11,57 @@ export function Experience() {
       type: "Professional Work",
       icon: Briefcase,
       description:
-        "Building professional websites and web applications for clients, collaborating with other developers in team settings. Delivering paid projects with focus on user experience and modern web technologies.",
+        "Developing responsive websites and web applications for real-world use cases, with an emphasis on clean interfaces, maintainable code, and reliable delivery.",
       achievements: [
-        "Delivered multiple client projects including tutoring platforms and content websites",
-        "Collaborated effectively with other developers in team environments",
-        "Managed client relationships and project timelines professionally",
-        "Built responsive, user-friendly interfaces using React and modern CSS",
+        "Delivered client projects including a tutoring platform and content-focused websites",
+        "Built responsive interfaces using React, JavaScript, HTML, CSS, and Tailwind CSS",
+        "Worked across frontend and backend concerns as project requirements demanded",
+        "Used Git and modern deployment platforms to manage and ship projects",
       ],
     },
     {
-      title: "Bootcamp Student",
+      title: "Full-Stack Development Training",
       company: "Power Learn Project Africa",
-      period: "Feb 2025 - Present",
-      type: "Current Learning",
+      period: "2025 - Present",
+      type: "Professional Development",
       icon: BookOpen,
       description:
-        "Intensive full-stack development bootcamp focusing on collaborative learning, problem-solving, and building real-world applications with modern technologies.",
+        "Structured software engineering training focused on practical development, collaboration, problem-solving, and building applications with modern technologies.",
       achievements: [
-        "Learning full-stack development with emphasis on practical application",
-        "Participating in collaborative coding projects and peer programming",
-        "Developing problem-solving skills through structured challenges",
-        "Building portfolio projects with guidance from industry professionals",
+        "Expanded from frontend development into backend and full-stack concepts",
+        "Practiced collaborative development and version-control workflows",
+        "Strengthened programming, debugging, and problem-solving skills",
+        "Applied learning through hands-on software projects",
       ],
     },
     {
-      title: "Frontend Development Certification",
-      company: "freeCodeCamp",
-      period: "Completed April 2024",
+      title: "Software Engineering Certification",
+      company: "Power Learn Project & EMURGO Africa",
+      period: "Completed 2025",
       type: "Certification",
       icon: Award,
       description:
-        "Completed comprehensive 300+ hour curriculum covering HTML, CSS, JavaScript, React, and responsive web design principles with hands-on projects.",
+        "Completed software engineering training covering programming fundamentals and practical development skills.",
       achievements: [
-        "Mastered responsive web design principles and mobile-first development",
-        "Built multiple projects demonstrating JavaScript and React proficiency",
-        "Learned modern CSS techniques including Flexbox and Grid",
-        "Completed algorithm and data structure challenges",
+        "Built a foundation in software engineering and application development",
+        "Applied programming concepts through practical exercises and projects",
+        "Developed stronger problem-solving and debugging habits",
+        "Continued building a professional portfolio alongside formal training",
       ],
     },
     {
       title: "Self-Taught Developer",
       company: "Independent Learning",
-      period: "2022 - 2023",
-      type: "Foundation",
+      period: "2022 - Present",
+      type: "Continuous Learning",
       icon: Users,
       description:
-        "Self-directed learning journey building foundational programming skills through online resources, tutorials, and personal projects.",
+        "Independent development journey combining documentation, tutorials, experimentation, and project-based learning to build practical software engineering skills.",
       achievements: [
-        "Developed strong foundation in HTML, CSS, and JavaScript",
-        "Built personal projects to practice and demonstrate skills",
-        "Learned version control with Git and collaborative development practices",
-        "Established disciplined learning routine and problem-solving approach",
+        "Built projects across frontend, backend, databases, and deployment",
+        "Developed practical skills with React, Python, Django, Node.js, Express, and Git",
+        "Learned by diagnosing implementation and deployment issues in real projects",
+        "Expanded into cybersecurity fundamentals and secure software practices",
       ],
     },
   ]
@@ -72,15 +72,15 @@ export function Experience() {
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Experience & Journey</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            My professional development journey from self-taught beginnings to client work
+            A progression from independent learning and client work toward professional software engineering.
           </p>
         </div>
 
         <div className="space-y-8">
-          {experiences.map((experience, index) => {
+          {experiences.map((experience) => {
             const IconComponent = experience.icon
             return (
-              <Card key={index} className="border-orange-500/20 hover:border-orange-500/40 transition-all duration-300">
+              <Card key={experience.title} className="border-orange-500/20 hover:border-orange-500/40 transition-all duration-300">
                 <CardHeader>
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -89,7 +89,7 @@ export function Experience() {
                     <div className="flex-1">
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
                         <CardTitle className="text-xl">{experience.title}</CardTitle>
-                        <Badge variant="secondary" className="bg-orange-500/10 text-orange-500 border-orange-500/20">
+                        <Badge variant="secondary" className="bg-orange-500/10 text-orange-500 border-orange-500/20 w-fit">
                           {experience.type}
                         </Badge>
                       </div>
@@ -101,12 +101,12 @@ export function Experience() {
                 <CardContent>
                   <p className="text-muted-foreground mb-4 leading-relaxed">{experience.description}</p>
                   <div className="space-y-2">
-                    <h4 className="font-semibold text-sm">Key Achievements:</h4>
-                    <ul className="space-y-1">
-                      {experience.achievements.map((achievement, achievementIndex) => (
-                        <li key={achievementIndex} className="text-sm text-muted-foreground flex items-start gap-2">
-                          <span className="w-1.5 h-1.5 bg-orange-500 rounded-full mt-2 flex-shrink-0"></span>
-                          {achievement}
+                    <h4 className="font-semibold text-sm">Highlights:</h4>
+                    <ul className="space-y-2">
+                      {experience.achievements.map((achievement) => (
+                        <li key={achievement} className="text-sm text-muted-foreground flex items-start gap-2">
+                          <span className="w-1.5 h-1.5 bg-orange-500 rounded-full mt-2 flex-shrink-0" />
+                          <span>{achievement}</span>
                         </li>
                       ))}
                     </ul>
