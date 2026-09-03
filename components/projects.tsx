@@ -8,9 +8,18 @@ import { ExternalLink, Github } from "lucide-react"
 export function Projects() {
   const projects = [
     {
+      title: "DevHeaven — Developer Platform",
+      description:
+        "Full-stack developer platform built with React and Express. Designed around real-world developer workflows, profiles, discovery, and community features, with a focus on responsive UX, backend integration, and production readiness.",
+      liveUrl: "https://dev-h-drab.vercel.app/profile",
+      githubUrl: "https://github.com/kgothalangLekitlane/devH",
+      technologies: ["React", "JavaScript", "Express", "Node.js", "MongoDB", "Vercel"],
+      featured: true,
+    },
+    {
       title: "GreatMindz Tutoring Platform",
       description:
-        "Professional tutoring website built with Django providing personalized learning experiences for students of all levels. Features easy navigation, subject browsing, session booking, and tailored resources with a robust backend system.",
+        "Professional tutoring platform built with Django and Python. Provides a structured experience for discovering subjects, connecting learners with tutoring services, and managing learning resources through a backend-driven application.",
       image: "/images/greatmindz-screenshot.png",
       liveUrl: "https://www.greatmindztutors.co.za",
       githubUrl: "https://github.com/kgothalangLekitlane/GreatMindz-Tutoring-main",
@@ -20,17 +29,17 @@ export function Projects() {
     {
       title: "Global Wanderer Travel Blog",
       description:
-        "Beautiful travel blog with engaging design and compelling content. Features clean layout, stunning visuals, and intuitive navigation for travel enthusiasts.",
+        "Responsive travel website built with HTML, CSS, and JavaScript, combining clean information architecture with engaging visual presentation and intuitive navigation.",
       image: "/images/travel-blog-screenshot.png",
       liveUrl: "https://startling-kataifi-4a7053.netlify.app",
       githubUrl: "https://github.com/kgothalangLekitlane/studio",
       technologies: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
-      featured: true,
+      featured: false,
     },
     {
       title: "Python File Handling & Exception Management",
       description:
-        "Focused project demonstrating file handling operations and exception management fundamentals. Shows error handling techniques and Python best practices.",
+        "Python project demonstrating practical file I/O, exception handling, validation, and defensive programming fundamentals.",
       githubUrl: "https://github.com/kgothalangLekitlane/filehandlingexception",
       technologies: ["Python", "File I/O", "Exception Handling"],
       featured: false,
@@ -38,7 +47,7 @@ export function Projects() {
     {
       title: "Python Programming Assignments",
       description:
-        "Collection of Python exercises and assignments covering core programming concepts, data structures, and algorithms. Demonstrates problem-solving skills and Python syntax mastery.",
+        "Collection of Python exercises covering core programming concepts, algorithms, data structures, and problem-solving techniques.",
       githubUrl: "https://github.com/kgothalangLekitlane/assignment",
       technologies: ["Python", "Algorithms", "Data Structures"],
       featured: false,
@@ -49,9 +58,9 @@ export function Projects() {
     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Featured Projects</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Selected Projects</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A showcase of my work, from client projects to learning exercises
+            A selection of full-stack, frontend, backend, and Python projects that demonstrate practical software development skills.
           </p>
         </div>
 
@@ -59,13 +68,13 @@ export function Projects() {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="border-orange-500/20 hover:border-orange-500/40 transition-all duration-300 overflow-hidden"
+              className="border-orange-500/20 hover:border-orange-500/40 transition-all duration-300 overflow-hidden h-full flex flex-col"
             >
               {project.image && (
                 <div className="relative h-48 overflow-hidden">
                   <Image
-                    src={project.image || "/placeholder.svg"}
-                    alt={project.title}
+                    src={project.image}
+                    alt={`${project.title} preview`}
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-300"
                   />
@@ -75,11 +84,11 @@ export function Projects() {
                 <CardTitle className="text-xl mb-2">{project.title}</CardTitle>
                 <p className="text-muted-foreground text-sm leading-relaxed">{project.description}</p>
               </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, techIndex) => (
+              <CardContent className="mt-auto">
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {project.technologies.map((tech) => (
                     <Badge
-                      key={techIndex}
+                      key={tech}
                       variant="secondary"
                       className="bg-orange-500/10 text-orange-500 hover:bg-orange-500/20 border-orange-500/20"
                     >
@@ -88,30 +97,19 @@ export function Projects() {
                   ))}
                 </div>
 
-                {project.liveUrl && (
-                  <div className="mb-3">
-                    <p className="text-xs text-muted-foreground mb-1">Live Site:</p>
-                    <p className="text-sm text-orange-500 break-all">{project.liveUrl}</p>
-                  </div>
-                )}
-
-                <div className="flex gap-3">
-                  {project.liveUrl ? (
+                <div className="flex flex-wrap gap-3">
+                  {project.liveUrl && (
                     <Button asChild size="sm" className="bg-orange-500 hover:bg-orange-600">
                       <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="h-4 w-4 mr-2" />
-                        Visit Site
+                        Live Demo
                       </Link>
-                    </Button>
-                  ) : (
-                    <Button disabled size="sm" variant="secondary">
-                      Code Project
                     </Button>
                   )}
                   <Button asChild variant="outline" size="sm">
                     <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                       <Github className="h-4 w-4 mr-2" />
-                      Code
+                      Source Code
                     </Link>
                   </Button>
                 </div>

@@ -1,37 +1,47 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { GraduationCap, Award, BookOpen } from "lucide-react"
+import { GraduationCap, Award, BookOpen, Sparkles } from "lucide-react"
 
 export function Education() {
   const educationItems = [
     {
       title: "Power Learn Project Africa",
-      subtitle: "Full-Stack Development Bootcamp",
-      period: "Feb 2025 - Present",
-      status: "Currently Enrolled",
+      subtitle: "Software Engineering / Full-Stack Development",
+      period: "Completed November 2025",
+      status: "Graduated",
       description:
-        "Intensive bootcamp focusing on full-stack development, collaborative learning, and real-world project building.",
-      icon: BookOpen,
+        "Completed the Power Learn Project Africa software engineering programme, developing practical programming, web development, Git, and problem-solving skills through structured training and projects.",
+      icon: GraduationCap,
       color: "bg-green-500/10 text-green-500 border-green-500/20",
     },
     {
-      title: "freeCodeCamp",
-      subtitle: "Frontend Development Certification",
-      period: "Completed April 2024",
+      title: "weThinkCode_",
+      subtitle: "Generative AI (GenAI) Certificate",
+      period: "Completed April 2026",
       status: "Certified",
       description:
-        "Comprehensive 300+ hour curriculum covering HTML, CSS, JavaScript, React, and responsive web design principles.",
+        "Completed specialised Generative AI training, strengthening my understanding of modern AI concepts and practical AI-assisted development workflows.",
+      icon: Sparkles,
+      color: "bg-violet-500/10 text-violet-500 border-violet-500/20",
+    },
+    {
+      title: "Cybersecurity Certifications",
+      subtitle: "Foundations of Cybersecurity & Security Risk Management",
+      period: "2025 - 2026",
+      status: "Certified",
+      description:
+        "Completed cybersecurity-focused learning covering security fundamentals, risk management, and core principles relevant to secure software development.",
       icon: Award,
       color: "bg-blue-500/10 text-blue-500 border-blue-500/20",
     },
     {
       title: "Self-Taught Learning",
-      subtitle: "Web Development Fundamentals",
-      period: "2022 - 2023",
-      status: "Foundation",
+      subtitle: "Web Development & Programming",
+      period: "2022 - Present",
+      status: "Continuous Learning",
       description:
-        "Independent study of web technologies, programming concepts, and development best practices through online resources and practice projects.",
-      icon: GraduationCap,
+        "Independent learning across modern web development, React, JavaScript, Python, backend development, databases, deployment, and software engineering practices.",
+      icon: BookOpen,
       color: "bg-purple-500/10 text-purple-500 border-purple-500/20",
     },
   ]
@@ -40,9 +50,9 @@ export function Education() {
     <section id="education" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
       <div className="container mx-auto max-w-4xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Education & Learning</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Education & Certifications</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            My continuous learning journey through bootcamps, certifications, and self-directed study
+            A practical learning journey spanning software engineering, Generative AI, cybersecurity, and continuous self-development.
           </p>
         </div>
 
