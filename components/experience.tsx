@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Briefcase, Users, Award, BookOpen } from "lucide-react"
+import { Briefcase, Users, Award, BookOpen, Sparkles } from "lucide-react"
 
 export function Experience() {
   const experiences = [
@@ -13,35 +13,50 @@ export function Experience() {
       description:
         "Developing responsive websites and web applications for real-world use cases, with an emphasis on clean interfaces, maintainable code, and reliable delivery.",
       achievements: [
-        "Delivered client projects including a tutoring platform and content-focused websites",
+        "Delivered client projects including the GreatMindz tutoring platform and content-focused websites",
         "Built responsive interfaces using React, JavaScript, HTML, CSS, and Tailwind CSS",
         "Worked across frontend and backend concerns as project requirements demanded",
         "Used Git and modern deployment platforms to manage and ship projects",
       ],
     },
     {
-      title: "Full-Stack Development Training",
+      title: "Software Engineering Training",
       company: "Power Learn Project Africa",
-      period: "2025 - Present",
+      period: "Completed November 2025",
       type: "Professional Development",
       icon: BookOpen,
       description:
-        "Structured software engineering training focused on practical development, collaboration, problem-solving, and building applications with modern technologies.",
+        "Completed structured software engineering training focused on practical development, programming fundamentals, problem-solving, and building applications with modern technologies.",
       achievements: [
+        "Strengthened programming and software engineering fundamentals",
         "Expanded from frontend development into backend and full-stack concepts",
         "Practiced collaborative development and version-control workflows",
-        "Strengthened programming, debugging, and problem-solving skills",
         "Applied learning through hands-on software projects",
+      ],
+    },
+    {
+      title: "Generative AI Certification",
+      company: "weThinkCode_",
+      period: "Completed April 2026",
+      type: "Certification",
+      icon: Sparkles,
+      description:
+        "Completed Generative AI training focused on understanding and applying modern AI concepts and tools in technology workflows.",
+      achievements: [
+        "Completed a focused Generative AI learning programme",
+        "Developed practical awareness of AI-assisted development workflows",
+        "Strengthened understanding of responsible and effective AI usage",
+        "Added GenAI capabilities alongside existing software engineering skills",
       ],
     },
     {
       title: "Software Engineering Certification",
       company: "Power Learn Project & EMURGO Africa",
-      period: "Completed 2025",
+      period: "Completed November 2025",
       type: "Certification",
       icon: Award,
       description:
-        "Completed software engineering training covering programming fundamentals and practical development skills.",
+        "Earned a software engineering certification after completing practical training in programming and application development.",
       achievements: [
         "Built a foundation in software engineering and application development",
         "Applied programming concepts through practical exercises and projects",
