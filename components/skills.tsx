@@ -1,30 +1,28 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Code, Database, Wrench } from "lucide-react"
+import { Code, Database, ShieldCheck, Wrench } from "lucide-react"
 
 export function Skills() {
   const skillCategories = [
     {
-      title: "Frontend Development",
+      title: "Frontend Engineering",
       icon: Code,
-      skills: ["React", "HTML5", "CSS3", "JavaScript", "Responsive Web Design", "Tailwind CSS"],
+      skills: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Responsive UI", "Vite"],
     },
     {
-      title: "Backend & Programming",
+      title: "Backend & Databases",
       icon: Database,
-      skills: ["Python", "Django (Basic)", "Git"],
+      skills: ["Node.js", "Express", "Python", "Django", "MongoDB", "MySQL", "REST APIs"],
     },
     {
-      title: "Tools & Modern Development",
+      title: "Cybersecurity",
+      icon: ShieldCheck,
+      skills: ["Security Fundamentals", "Risk Management", "Secure Development", "Authentication", "Input Validation"],
+    },
+    {
+      title: "Tools & Engineering",
       icon: Wrench,
-      skills: [
-        "VS Code",
-        "AI-Assisted Development",
-        "Chrome DevTools",
-        "Mobile-First Design",
-        "Cross-browser Compatibility",
-        "Version Control",
-      ],
+      skills: ["Git", "GitHub", "VS Code", "Chrome DevTools", "Vercel", "Render", "AI-Assisted Development"],
     },
   ]
 
@@ -34,18 +32,18 @@ export function Skills() {
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Skills & Technologies</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            The technologies and tools I use to bring ideas to life
+            A practical toolkit spanning frontend development, backend engineering, databases, deployment, and cybersecurity.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {skillCategories.map((category, index) => {
+        <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
+          {skillCategories.map((category) => {
             const IconComponent = category.icon
             return (
-              <Card key={index} className="border-orange-500/20 hover:border-orange-500/40 transition-colors">
+              <Card key={category.title} className="border-orange-500/20 hover:border-orange-500/40 transition-colors h-full">
                 <CardHeader>
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-orange-500/10 rounded-lg flex items-center justify-center">
+                    <div className="w-10 h-10 bg-orange-500/10 rounded-lg flex items-center justify-center shrink-0">
                       <IconComponent className="h-5 w-5 text-orange-500" />
                     </div>
                     <CardTitle className="text-lg">{category.title}</CardTitle>
@@ -53,9 +51,9 @@ export function Skills() {
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill, skillIndex) => (
+                    {category.skills.map((skill) => (
                       <Badge
-                        key={skillIndex}
+                        key={skill}
                         variant="secondary"
                         className="bg-orange-500/10 text-orange-500 hover:bg-orange-500/20 border-orange-500/20"
                       >
