@@ -4,13 +4,19 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 
 export const metadata: Metadata = {
-  title: "Kgothalang Lekitlane | Software Developer",
+  metadataBase: new URL("https://kgothalanglekitlane.vercel.app"),
+  title: {
+    default: "Kgothalang Lekitlane | Software Developer",
+    template: "%s | Kgothalang Lekitlane",
+  },
   description:
-    "Portfolio of Kgothalang Lekitlane, a South African software developer building responsive web applications with React, JavaScript, Python and Django, with a growing focus on cybersecurity.",
+    "Portfolio of Kgothalang Lekitlane, a South African software developer building responsive web applications with React, JavaScript, Python and Django, with a focus on secure development.",
   keywords: [
     "Kgothalang Lekitlane",
     "Software Developer",
+    "Junior Software Developer",
     "Frontend Developer",
+    "Full-Stack Developer",
     "React Developer",
     "JavaScript Developer",
     "Python Developer",
@@ -26,6 +32,8 @@ export const metadata: Metadata = {
       "Software developer portfolio featuring React, JavaScript, Python, Django and cybersecurity-focused projects.",
     type: "website",
     locale: "en_ZA",
+    url: "https://kgothalanglekitlane.vercel.app",
+    siteName: "Kgothalang Lekitlane Portfolio",
   },
   twitter: {
     card: "summary_large_image",
@@ -45,8 +53,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className="dark">
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <body className="dark antialiased">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
           {children}
         </ThemeProvider>
