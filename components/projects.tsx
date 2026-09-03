@@ -17,6 +17,22 @@ export function Projects() {
       featured: true,
     },
     {
+      title: "OTD — Traffic Department Management System",
+      description:
+        "Full-stack mock traffic department platform with role-based access for drivers, officers, and administrators. Includes JWT authentication, license lookups, fines, appointments, validation, rate limiting, caching, and MongoDB-backed APIs.",
+      githubUrl: "https://github.com/kgothalangLekitlane/OTD",
+      technologies: ["React", "Vite", "Node.js", "Express", "MongoDB", "JWT", "React Query"],
+      featured: true,
+    },
+    {
+      title: "AlamedaAfrica",
+      description:
+        "Modern web application built with React and contemporary frontend tooling. A project focused on creating a polished, responsive user experience while strengthening practical frontend development and deployment skills.",
+      githubUrl: "https://github.com/kgothalangLekitlane/AlamedaAfrica",
+      technologies: ["React", "JavaScript", "Vite", "Responsive UI", "Vercel"],
+      featured: true,
+    },
+    {
       title: "GreatMindz Tutoring Platform",
       description:
         "Professional tutoring platform built with Django and Python. Provides a structured experience for discovering subjects, connecting learners with tutoring services, and managing learning resources through a backend-driven application.",
